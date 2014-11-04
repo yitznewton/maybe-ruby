@@ -55,7 +55,7 @@ describe 'Maybe' do
         block = proc { |x| x + 1 }
         maybe = Maybe.new(value)
         result = maybe.select(&block)
-        expect(result).to eq block.call(value)
+        expect(result.value_or 999).to eq block.call(value)
       end
     end
 

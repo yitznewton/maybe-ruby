@@ -19,7 +19,7 @@ class Maybe
     if @raw_value.nil?
       self
     else
-      yield @raw_value
+      Maybe.new(yield @raw_value)
     end
   end
 end
