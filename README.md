@@ -1,4 +1,8 @@
 ![Travis build status](http://img.shields.io/travis/yitznewton/maybe-ruby.svg)
+![1.8 not supported](http://img.shields.io/badge/1.8-not_supported-red.svg)
+![1.9 supported](http://img.shields.io/badge/1.9-supported-green.svg)
+![2.0 supported](http://img.shields.io/badge/1.9-supported-green.svg)
+![2.1 supported](http://img.shields.io/badge/1.9-supported-green.svg)
 ![BSD 2-Clause license](http://img.shields.io/packagist/l/yitznewton/maybe-ruby.svg)
 
 # A Maybe monad implementation for Ruby
