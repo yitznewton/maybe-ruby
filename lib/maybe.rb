@@ -22,6 +22,12 @@ class Maybe
       Maybe.new(yield @raw_value)
     end
   end
+
+  def method_missing(method_name, *args)
+    select do |val|
+      val.send(method_name, *args)
+    end
+  end
 end
 
 module Kernel
