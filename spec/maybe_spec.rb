@@ -1,5 +1,11 @@
 require 'maybe'
 
+describe 'Maybe()' do
+  it 'returns a new Maybe object' do
+    expect(Maybe('a')).to be_a(Maybe)
+  end
+end
+
 describe 'Maybe' do
   describe '#value_or' do
     context 'with value' do
@@ -66,6 +72,16 @@ describe 'Maybe' do
         result = maybe.select { |x| x + 1 }
         expect(result.value_or alternative).to eq alternative
       end
+    end
+  end
+
+  describe '#method_missing' do
+    it 'calls the method and returns a loaded Maybe' do
+      value = 'a'
+      maybe = Maybe.new(value)
+      result = maybe.upcase
+      expect(result).to be_a(Maybe)
+      expect(result.value_or 'b').to eq 'A'
     end
   end
 end
