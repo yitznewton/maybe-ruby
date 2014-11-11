@@ -1,5 +1,11 @@
 require 'maybe'
 
+describe 'Maybe()' do
+  it 'returns a new Maybe object' do
+    expect(Maybe('a')).to be_a(Maybe)
+  end
+end
+
 describe 'Maybe' do
   describe '#value_or' do
     context 'with value' do

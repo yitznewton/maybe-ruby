@@ -23,3 +23,9 @@ class Maybe
     end
   end
 end
+
+module Kernel
+  def Maybe(raw_value)
+    Maybe.new(raw_value)
+  end
+end
