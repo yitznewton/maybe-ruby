@@ -68,4 +68,14 @@ describe 'Maybe' do
       end
     end
   end
+
+  describe '#method_missing' do
+    it 'calls the method and returns a loaded Maybe' do
+      value = 'a'
+      maybe = Maybe.new(value)
+      result = maybe.upcase
+      expect(result).to be_a(Maybe)
+      expect(result.value_or 'b').to eq 'A'
+    end
+  end
 end
